@@ -191,63 +191,6 @@ public class NumberFunctions {
 		System.out.println(seconds+" seconds are in Full-Time format(Hours:Minutes:Seconds): "+hours+":"+minutes+":"+sec);
 	}
 	
-	String decimalToBinary(int num) {
-		// FUNCTION:
-		// Convert a number to binary 
-		// Arguments: int number
-		
-		if(num == 0) {
-			return "0";
-		}
-		String binary = "";
-		while(num>0) {
-			int remainder = num % 2;
-			binary = binary + Integer.toString(remainder);
-			num = num / 2;
-		}
-		String temp = "";	// reverse the binary string to get the correct binary number
-		for(int i=0;i<binary.length();i++) {
-			temp = temp + binary.charAt(binary.length()-i-1);
-		}
-		return temp;
-	}
-	
-	void decimalAddSub(int a, int b) {
-		// FUNCTION:
-		// Add or Subtract two numbers after they are converted to binary
-		// Arguments: int a and b
-		
-		NumberFunctions nf1 = new NumberFunctions();
-		int bin1 = Integer.parseInt(nf1.decimalToBinary(a));
-		int bin2 = Integer.parseInt(nf1.decimalToBinary(b));
-		
-		System.out.println("The number "+a+" in binary is: "+bin1);
-		System.out.println("The number "+b+" in binary is: "+bin2);
-		
-		String result = "";
-		System.out.println("Enter 1 for Addition - 0 for Subtraction: ");
-		Scanner sc = new Scanner(System.in);
-		int choice = sc.nextInt();
-		if(choice == 1) {
-			int carry = 0;
-			int temp;
-			while(bin1!=0 || bin2!=0) {	// get one by one digits from the right side of the numbers
-		        temp = (bin1 % 10 + bin2 % 10 + carry) % 2;
-		        result = temp + result;
-
-		        carry = (bin1 % 10 + bin2 % 10 + carry) / 2;
-		        bin1 = bin1 / 10;
-		        bin2 = bin2 / 10;
-		    }
-		    if (carry != 0) {
-		        result = carry + result;
-		    }
-		    System.out.println("The addition of the binary numbers is: "+result);
-		}
-		else {
-			int carry = 0;
-		}
-	}
 	
 	public static void main(String[] args) {
 		int app_flag = 0;
@@ -262,9 +205,7 @@ public class NumberFunctions {
 			System.out.println("6. Calculate the mean of an Array");
 			System.out.println("7. Calculate the minimum amount of coins for a given float number");
 			System.out.println("8. Convert seconds to Full-Time format");
-			System.out.println("9. Binary Numbers Manipulation");
-			System.out.println("10. Hexadecimal Numbers Manipulation");
-			System.out.println("11. End Application");
+			System.out.println("9. End Application");
 			System.out.println("----------------------------");
 			System.out.println("Select the function: ");
 
@@ -345,16 +286,6 @@ public class NumberFunctions {
 				nf.formatSecondsToFullTime(sec);
 			}
 			if(choice == 9) {
-				System.out.println("Enter the first number: ");
-				int num = sc.nextInt();
-				System.out.println("Enter the second number: ");
-				int num2 = sc.nextInt();
-				nf.decimalAddSub(num, num2);
-			}
-			if(choice == 10) {
-				
-			}
-			if(choice == 11) {
 				app_flag = 1;
 				sc.close();
 			}
