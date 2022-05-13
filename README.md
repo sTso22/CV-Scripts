@@ -14,3 +14,12 @@ Java Scripts with user menu for testing the various functions
         - Add/Delete/Print
     - Binary Tree Functions
         - Add/Delete/Print
+  Number Functions
+    - isOdd
+    - isEven
+    - isPrime
+    - Fibonacci Calculator
+    - Geometrical Shape Surface Calculator
+    - Array mean Calculator
+    - Minimum Coin Amount Calculator
+    - Seconds to Full-Time Converter
