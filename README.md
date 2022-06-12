@@ -29,3 +29,8 @@ Java Scripts with user menu for testing the various functions
     - Hexadecimal Numbers
       - Decimal To Hexadecimal Converter
       - Add Hexadecimal Numbers
+  Sorting Algorithms
+    - BubbleSort
+    - MergeSort
+    - InsertionSort
+    - QuickSort
