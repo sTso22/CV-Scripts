@@ -212,9 +212,9 @@ public class NumberFunctions {
 		return temp;
 	}
 	
-	void decimalAddSub(int a, int b) {
+	void addBinaries(int a, int b) {
 		// FUNCTION:
-		// Add or Subtract two numbers after they are converted to binary
+		// Add two numbers after they are converted to binary
 		// Arguments: int a and b
 		
 		NumberFunctions nf1 = new NumberFunctions();
@@ -225,28 +225,20 @@ public class NumberFunctions {
 		System.out.println("The number "+b+" in binary is: "+bin2);
 		
 		String result = "";
-		System.out.println("Enter 1 for Addition - 0 for Subtraction: ");
-		Scanner sc = new Scanner(System.in);
-		int choice = sc.nextInt();
-		if(choice == 1) {
-			int carry = 0;
-			int temp;
-			while(bin1!=0 || bin2!=0) {	// get one by one digits from the right side of the numbers
-		        temp = (bin1 % 10 + bin2 % 10 + carry) % 2;
-		        result = temp + result;
+		int carry = 0;
+		int temp;
+		while(bin1!=0 || bin2!=0) {	// get one by one digits from the right side of the numbers
+			temp = (bin1 % 10 + bin2 % 10 + carry) % 2;
+		    result = temp + result;
 
-		        carry = (bin1 % 10 + bin2 % 10 + carry) / 2;
-		        bin1 = bin1 / 10;
-		        bin2 = bin2 / 10;
-		    }
-		    if (carry != 0) {
-		        result = carry + result;
-		    }
-		    System.out.println("The addition of the binary numbers is: "+result);
+		    carry = (bin1 % 10 + bin2 % 10 + carry) / 2;
+		    bin1 = bin1 / 10;
+		    bin2 = bin2 / 10;
 		}
-		else {
-			int carry = 0;
+		if (carry != 0) {
+			result = carry + result;
 		}
+		System.out.println("The addition of the binary numbers is: "+result);
 	}
 	
 	String decimalToHex(int number) {
@@ -432,7 +424,7 @@ public class NumberFunctions {
 				int num = sc.nextInt();
 				System.out.println("Enter the second number: ");
 				int num2 = sc.nextInt();
-				nf.decimalAddSub(num, num2);
+				nf.addBinaries(num, num2);
 			}
 			if(choice == 10) {
 				System.out.println("Enter the first number: ");
