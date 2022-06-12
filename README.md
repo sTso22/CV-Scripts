@@ -23,3 +23,9 @@ Java Scripts with user menu for testing the various functions
     - Array mean Calculator
     - Minimum Coin Amount Calculator
     - Seconds to Full-Time Converter
+    - Binary Numbers
+      - Decimal To Binary Converter
+      - Add Binary Numbers
+    - Hexadecimal Numbers
+      - Decimal To Hexadecimal Converter
+      - Add Hexadecimal Numbers
